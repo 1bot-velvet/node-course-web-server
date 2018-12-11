@@ -2,7 +2,7 @@ const express = require('express');//for Express
 const hbs = require('hbs');//for Handlebars
 const fs = require('fs');//to write to server
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;//gets port number assigned by Heroku or uses 3000
 
 var app = express();
 
@@ -52,6 +52,12 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
     });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'My Projects',
+  });
 });
 
 app.get('/bad', (req, res) => {
